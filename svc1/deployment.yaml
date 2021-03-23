@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-svc1
+spec:
+  selector:
+    matchLabels:
+      run: svc1
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: svc1
+    spec:
+      containers:
+      - name: svc1
+        image: shajalahamedcse/devops-svc1:0.0.1
+        ports:
+        - containerPort: 9090
