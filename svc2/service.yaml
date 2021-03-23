@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: python-svc2-svc
+  labels:
+    run: python-svc2-svc
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 9090
+  selector:
+    run: svc2

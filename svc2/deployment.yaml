@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-svc2
+spec:
+  selector:
+    matchLabels:
+      run: svc2
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: svc2
+    spec:
+      containers:
+      - name: svc2
+        image: shajalahamedcse/devops-svc2:0.0.1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 9090
